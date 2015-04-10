@@ -56,6 +56,106 @@
 
 <h2 id="authorize-user">Authorize user</h2>
 
+          <h1 id="weighted-products">Weighted products</h1>
+
+<h2 id="show-product">Show product</h2>
+
+<p>Returns full information about the registered product</p>
+<pre><code class="highlight coffeescript"><span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
+  <span class="na">dataType</span><span class="o">:</span> <span class="s">"json"</span>
+  <span class="na">type</span><span class="o">:</span> <span class="s">"get"</span>
+  <span class="na">url</span><span class="o">:</span> <span class="s">"/api/weights/5"</span>
+  <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">redirectSomewhere</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Sth"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"hs_mapping"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hs8"</span><span class="p">:</span><span class="s2">"00000031"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hs8_text"</span><span class="p">:</span><span class="s2">"Proviant"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hs6_text"</span><span class="p">:</span><span class="s2">"Levende dyr og animalske produkter"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="s2">"ean"</span><span class="p">:</span><span class="s2">"1234567891233"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"product_code"</span><span class="p">:</span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"trademark"</span><span class="p">:</span><span class="s2">"Coke"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"weight_source_type"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"Own weighing"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Representatives of the PRO performed the weighing."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_quality"</span><span class="p">:</span><span class="s2">"Very good"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="s2">"weight_source_company_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="s2">"weight_source_company"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_no"</span><span class="p">:</span><span class="s2">"984170661"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Aveiro AS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Norway"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pro"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Grønt Punkt Norge"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="s2">"data_reliability"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="s2">"product_importance"</span><span class="p">:</span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"is_gross"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="s2">"approved"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="s2">"created_date"</span><span class="p">:</span><span class="s2">"2015-04-10T00:04:46.000+02:00"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"updated_date"</span><span class="p">:</span><span class="s2">"2015-04-10T00:04:46.000+02:00"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"created_by_user"</span><span class="p">:</span><span class="s2">"Greg"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"updated_by_user"</span><span class="p">:</span><span class="s2">"Prakriti"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"weight_data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"packaging_type"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bølgepapp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Bølgepapp og massivpapp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"presentation_order"</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"material"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bølgepapp og massivpapp"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"descrption"</span><span class="p">:</span><span class="s2">"Bølgepapp og massivpapp"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"presentation_order"</span><span class="p">:</span><span class="mi">50</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+
+<h3 id="http-response-codes">HTTP Response Codes</h3>
+
+<table><thead>
+<tr>
+<th>Response</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>ok.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable entity</td>
+</tr>
+</tbody></table>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET api/weights/:ID</code></p>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
