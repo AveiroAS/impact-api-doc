@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - authorization
+  - weights
   - errors
 
 search: true
