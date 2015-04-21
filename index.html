@@ -52,9 +52,48 @@
 
 <p>Authorization is performed using Devise (server side) and ng-token-auth (client side) and is token based. User authenticates using email and password.</p>
 
-<h2 id="create-user">Create user</h2>
+<h2 id="login">Login</h2>
 
-<h2 id="authorize-user">Authorize user</h2>
+<blockquote>
+<p>The successfull login returns user object that is available in $rootScope.currentUser</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">  
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"provider"</span><span class="p">:</span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"uid"</span><span class="p">:</span><span class="s2">"greg@aveiro.no"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Greg"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"surname"</span><span class="p">:</span><span class="s2">"Brzezinka"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"greg@aveiro.no"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"company_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"get_roles"</span><span class="p">:[</span><span class="w">  
+      </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weigher"</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="s2">"company"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_no"</span><span class="p">:</span><span class="s2">"984170661"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Aveiro AS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pro_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country_id"</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pro"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Grønt Punkt Norge"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"description"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Norway"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"iso2"</span><span class="p">:</span><span class="s2">"NO"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"iso3"</span><span class="p">:</span><span class="s2">"NOR"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"locale"</span><span class="p">:</span><span class="s2">"EN"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"signedIn"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"configName"</span><span class="p">:</span><span class="s2">"default"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
 
           <h1 id="weighted-products">Weighted products</h1>
 
