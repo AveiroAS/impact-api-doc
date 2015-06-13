@@ -141,7 +141,7 @@ $.ajax
 ### Parmeters
 
 Param | Format | Description
---------- | -------
+--------- | ------- | ------- 
 country_code | 2 capital letters | iso2 country code
 hs8 | 8 digits | customs code valid in country given in country_code
 
