@@ -91,3 +91,86 @@ Response | Meaning
 ### HTTP Request
 
 `GET api/weights/:ID`
+
+## Packaging factors
+
+Returns the list of packaging codes and respective packaging factors for given country and hs8 code.
+
+```coffee
+$.ajax
+  dataType: "json"
+  type: "get"
+  data:
+    hs8: "01011919"
+    lang: "NO"
+  url: "/api/weights/packaging_factors"
+  success: (data, status, jqXHR) ->
+    redirectSomewhere(status)
+```
+
+> The above command returns JSON array structured like this:
+
+```json
+[
+    {
+        code: "T422"
+        packaging_factor: 0.2269899893871603
+        last_updated_at: "2015-04-30"
+    }
+    {
+        code: "H322"
+        packaging_factor: 0.8070761394279328
+        last_updated_at: "2015-03-18"
+    }
+    {
+        code: "H124"
+        packaging_factor: 0.9749967979256446
+        last_updated_at: "2015-03-18"
+    }
+    {
+        code: "H632"
+        packaging_factor: 0.08690572881998823
+        last_updated_at: "2015-03-11"
+    }
+]
+```
+
+
+
+
+### Parmeters
+
+Param | Format | Description
+--------- | -------
+country_code | 2 capital letters | iso2 country code
+hs8 | 8 digits | customs code valid in country given in country_code
+
+> Parameters validation errors will be reported in 422 response JSON like:
+
+```json
+{
+    errors: {
+        hs8: [
+            "can't be blank"
+            "is the wrong length (should be 8 characters)"
+            "is not a number"
+        ]
+        country_code: [
+           "can't be blank"
+           "is the wrong length (should be 2 characters)"
+           " is not a valid country code"
+        ]
+    }
+}
+```
+
+### HTTP Response Codes
+
+Response | Meaning
+--------- | -------
+200 | ok
+422 | Unprocessable entity
+
+### HTTP Request
+
+`GET api/weights/packaging_factors`
