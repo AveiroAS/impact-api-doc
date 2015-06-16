@@ -212,27 +212,62 @@
 <blockquote>
 <p>The above command returns JSON array structured like this:</p>
 </blockquote>
-<pre><code class="highlight json"><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="s2">"T422"</span><span class="w">
-        </span><span class="err">packaging_factor:</span><span class="w"> </span><span class="mf">0.2269899893871603</span><span class="w">
-        </span><span class="err">last_updated_at:</span><span class="w"> </span><span class="s2">"2015-04-30"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="s2">"H322"</span><span class="w">
-        </span><span class="err">packaging_factor:</span><span class="w"> </span><span class="mf">0.8070761394279328</span><span class="w">
-        </span><span class="err">last_updated_at:</span><span class="w"> </span><span class="s2">"2015-03-18"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="s2">"H124"</span><span class="w">
-        </span><span class="err">packaging_factor:</span><span class="w"> </span><span class="mf">0.9749967979256446</span><span class="w">
-        </span><span class="err">last_updated_at:</span><span class="w"> </span><span class="s2">"2015-03-18"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="s2">"H632"</span><span class="w">
-        </span><span class="err">packaging_factor:</span><span class="w"> </span><span class="mf">0.08690572881998823</span><span class="w">
-        </span><span class="err">last_updated_at:</span><span class="w"> </span><span class="s2">"2015-03-11"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+<pre><code class="highlight json"><span class="p">[</span><span class="w"> 
+  </span><span class="p">{</span><span class="w"> </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T122"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"material"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Plastemballasje"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.13077523498238144</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kind"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Folie"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T422"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"material"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bølgepapp og massivpapp"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.5392959336048203</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kind"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bølgepapp"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"material"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.1410425117764894</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kind"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Transportpallet"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"H124"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-14"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"material"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Plastemballasje"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.8907183597528011</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kind"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Flasker/kanner/..."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"H422"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-30"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"material"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bølgepapp og massivpapp"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.9506501728182712</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kind"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bølgepapp"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
