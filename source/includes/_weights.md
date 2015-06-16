@@ -114,55 +114,65 @@ $.ajax
 [ 
   { "code" : "T122",
     "last_updated_at" : "2015-04-11",
-    "material" : { "id" : 1,
+    "material" : { 
+        "id" : 1,
         "name" : "Plastemballasje"
       },
     "packaging_factor" : 0.13077523498238144,
-    "type" : { "id" : 1,
+    "type" : { 
+        "id" : 1,
         "kind" : "T",
         "name" : "Folie"
       }
   },
   { "code" : "T422",
     "last_updated_at" : "2015-06-05",
-    "material" : { "id" : 5,
+    "material" : { 
+        "id" : 5,
         "name" : "Bølgepapp og massivpapp"
       },
     "packaging_factor" : 0.5392959336048203,
-    "type" : { "id" : 8,
+    "type" : { 
+        "id" : 8,
         "kind" : "T",
         "name" : "Bølgepapp"
       }
   },
   { "code" : "T0",
     "last_updated_at" : "2015-05-11",
-    "material" : { "id" : 12,
+    "material" : { 
+        "id" : 12,
         "name" : "unknown"
       },
     "packaging_factor" : 0.1410425117764894,
-    "type" : { "id" : 27,
+    "type" : { 
+        "id" : 27,
         "kind" : "T",
         "name" : "Transportpallet"
       }
   },
   { "code" : "H124",
     "last_updated_at" : "2015-03-14",
-    "material" : { "id" : 1,
+    "material" : { 
+        "id" : 1,
         "name" : "Plastemballasje"
       },
     "packaging_factor" : 0.8907183597528011,
-    "type" : { "id" : 2,
+    "type" : { 
+        "id" : 2,
         "kind" : "H",
         "name" : "Flasker/kanner/..."
       }
   },
   { "code" : "H422",
     "last_updated_at" : "2015-03-30",
-    "material" : { "id" : 5,
+    "material" : { 
+        "id" : 5,
         "name" : "Bølgepapp og massivpapp"
       },
     "packaging_factor" : 0.9506501728182712,
-    "type" : { "id" : 8,
+    "type" : { 
+        "id" : 8,
         "kind" : "H",
         "name" : "Bølgepapp"
       }
