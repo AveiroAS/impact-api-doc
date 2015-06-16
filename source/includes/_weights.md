@@ -111,27 +111,62 @@ $.ajax
 > The above command returns JSON array structured like this:
 
 ```json
-[
-    {
-        code: "T422"
-        packaging_factor: 0.2269899893871603
-        last_updated_at: "2015-04-30"
-    }
-    {
-        code: "H322"
-        packaging_factor: 0.8070761394279328
-        last_updated_at: "2015-03-18"
-    }
-    {
-        code: "H124"
-        packaging_factor: 0.9749967979256446
-        last_updated_at: "2015-03-18"
-    }
-    {
-        code: "H632"
-        packaging_factor: 0.08690572881998823
-        last_updated_at: "2015-03-11"
-    }
+[ 
+  { "code" : "T122",
+    "last_updated_at" : "2015-04-11",
+    "material" : { "id" : 1,
+        "name" : "Plastemballasje"
+      },
+    "packaging_factor" : 0.13077523498238144,
+    "type" : { "id" : 1,
+        "kind" : "T",
+        "name" : "Folie"
+      }
+  },
+  { "code" : "T422",
+    "last_updated_at" : "2015-06-05",
+    "material" : { "id" : 5,
+        "name" : "Bølgepapp og massivpapp"
+      },
+    "packaging_factor" : 0.5392959336048203,
+    "type" : { "id" : 8,
+        "kind" : "T",
+        "name" : "Bølgepapp"
+      }
+  },
+  { "code" : "T0",
+    "last_updated_at" : "2015-05-11",
+    "material" : { "id" : 12,
+        "name" : "unknown"
+      },
+    "packaging_factor" : 0.1410425117764894,
+    "type" : { "id" : 27,
+        "kind" : "T",
+        "name" : "Transportpallet"
+      }
+  },
+  { "code" : "H124",
+    "last_updated_at" : "2015-03-14",
+    "material" : { "id" : 1,
+        "name" : "Plastemballasje"
+      },
+    "packaging_factor" : 0.8907183597528011,
+    "type" : { "id" : 2,
+        "kind" : "H",
+        "name" : "Flasker/kanner/..."
+      }
+  },
+  { "code" : "H422",
+    "last_updated_at" : "2015-03-30",
+    "material" : { "id" : 5,
+        "name" : "Bølgepapp og massivpapp"
+      },
+    "packaging_factor" : 0.9506501728182712,
+    "type" : { "id" : 8,
+        "kind" : "H",
+        "name" : "Bølgepapp"
+      }
+  }
 ]
 ```
 
