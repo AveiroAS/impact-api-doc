@@ -343,6 +343,95 @@
 
 <p><code class="prettyprint">GET api/weights/packaging_factors</code></p>
 
+          <h1 id="reports">Reports</h1>
+
+<h2 id="customs-code-info">Customs code info</h2>
+
+<p>Returns the info for given customs code mapping for given country.</p>
+<pre><code class="highlight coffeescript"><span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
+  <span class="na">dataType</span><span class="o">:</span> <span class="s">"json"</span>
+  <span class="na">type</span><span class="o">:</span> <span class="s">"get"</span>
+  <span class="na">data</span><span class="o">:</span>
+    <span class="na">hs8</span><span class="o">:</span> <span class="s">"01011919"</span>
+    <span class="na">lang</span><span class="o">:</span> <span class="s">"NO"</span>
+  <span class="na">url</span><span class="o">:</span> <span class="s">"/api/reports/customs_code_info"</span>
+  <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">redirectSomewhere</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON array structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"hs8"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01011919"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hs6_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Levende dyr og animalske produkter"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hs8_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hester, over 1/2 år, levende, ikke vallaker, ikke til avl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="parmeters">Parmeters</h3>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country_code</td>
+<td>2 capital letters</td>
+<td>iso2 country code</td>
+</tr>
+<tr>
+<td>hs8</td>
+<td>8 digits</td>
+<td>customs code valid in country given in country_code</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Parameters validation errors will be reported in 422 response JSON like:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">errors</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">hs8</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"can't be blank"</span><span class="w">
+            </span><span class="s2">"is the wrong length (should be 8 characters)"</span><span class="w">
+            </span><span class="s2">"is not a number"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+        </span><span class="err">country_code:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="s2">"can't be blank"</span><span class="w">
+           </span><span class="s2">"is the wrong length (should be 2 characters)"</span><span class="w">
+           </span><span class="s2">" is not a valid country code"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="http-response-codes">HTTP Response Codes</h3>
+
+<table><thead>
+<tr>
+<th>Response</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable entity</td>
+</tr>
+</tbody></table>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET api/reports/customs_code_info</code></p>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
