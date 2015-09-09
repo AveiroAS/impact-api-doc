@@ -219,7 +219,7 @@
         </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Plastemballasje"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.13077523498238144</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"packaging_factor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.134077523498238144</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
         </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"kind"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
@@ -281,6 +281,25 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
+<h3 id="use-cases">Use cases</h3>
+
+<h4 id="valid-hs8-for-given-country,-but-all-packaging-factors-are-null">Valid hs8 for given country, but all packaging factors are null</h4>
+
+<p>In such case, the API will return the following JSON with HTTP status code 202:</p>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Packaging factors for all packaging types are 0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"packaging_factor"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h4 id="invalid-hs8-for-given-country,-but-all-packaging-factors-are-null">Invalid hs8 for given country, but all packaging factors are null</h4>
+
+<p>In such case, the API will return the following JSON with HTTP status code 404:</p>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS8 is not available for Norway"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
 <h3 id="parmeters">Parmeters</h3>
 
 <table><thead>
@@ -331,7 +350,15 @@
 </thead><tbody>
 <tr>
 <td>200</td>
-<td>ok</td>
+<td>ok.</td>
+</tr>
+<tr>
+<td>202</td>
+<td>All factors equal zero for given hs8</td>
+</tr>
+<tr>
+<td>404</td>
+<td>HS8 not valid for given country code</td>
 </tr>
 <tr>
 <td>422</td>
