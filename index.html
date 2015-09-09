@@ -281,24 +281,31 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3 id="use-cases">Use cases</h3>
+<aside class="notice">
 
-<h4 id="valid-hs8-for-given-country,-but-all-packaging-factors-are-null">Valid hs8 for given country, but all packaging factors are null</h4>
+<strong>Valid hs8 for given country, but all packaging factors are null</strong>
+<br>
+In such case, the API will return the following JSON with HTTP status code 202:
+<br>
+<code>
+{
+  "message": "Packaging factors for all packaging types are 0",
+  "packaging_factor": 0
+}
+</code>
+</aside>
 
-<p>In such case, the API will return the following JSON with HTTP status code 202:</p>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Packaging factors for all packaging types are 0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"packaging_factor"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<h4 id="invalid-hs8-for-given-country,-but-all-packaging-factors-are-null">Invalid hs8 for given country, but all packaging factors are null</h4>
-
-<p>In such case, the API will return the following JSON with HTTP status code 404:</p>
-<pre><code class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS8 is not available for Norway"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<aside class="notice">
+<strong>Invalid hs8 for given country, but all packaging factors are null</strong>
+<br>
+In such case, the API will return the following JSON with HTTP status code 404:
+<br>
+<code>
+{
+  "errors": "HS8 is not available for Norway"
+}
+</code>
+</aside>
 
 <h3 id="parmeters">Parmeters</h3>
 
