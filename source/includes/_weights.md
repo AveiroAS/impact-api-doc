@@ -180,28 +180,30 @@ $.ajax
 ]
 ```
 
-### Use cases
+<aside class="notice">
 
-#### Valid hs8 for given country, but all packaging factors are null
-
+<strong>Valid hs8 for given country, but all packaging factors are null</strong>
+<br>
 In such case, the API will return the following JSON with HTTP status code 202:
-
-```json
+<br>
+<code>
 {
   "message": "Packaging factors for all packaging types are 0",
   "packaging_factor": 0
 }
-```
-#### Invalid hs8 for given country, but all packaging factors are null
-
+</code>
+</aside>
+<aside class="notice">
+<strong>Invalid hs8 for given country, but all packaging factors are null</strong>
+<br>
 In such case, the API will return the following JSON with HTTP status code 404:
-
-```json
+<br>
+<code>
 {
   "errors": "HS8 is not available for Norway"
 }
-```
-
+</code>
+</aside>
 
 ### Parmeters
 
