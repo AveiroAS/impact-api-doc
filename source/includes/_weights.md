@@ -118,7 +118,7 @@ $.ajax
         "id" : 1,
         "name" : "Plastemballasje"
       },
-    "packaging_factor" : 0.13077523498238144,
+    "packaging_factor" : 0.134077523498238144,
     "type" : { 
         "id" : 1,
         "kind" : "T",
@@ -180,7 +180,27 @@ $.ajax
 ]
 ```
 
+### Use cases
 
+#### Valid hs8 for given country, but all packaging factors are null
+
+In such case, the API will return the following JSON with HTTP status code 202:
+
+```json
+{
+  "message": "Packaging factors for all packaging types are 0",
+  "packaging_factor": 0
+}
+```
+#### Invalid hs8 for given country, but all packaging factors are null
+
+In such case, the API will return the following JSON with HTTP status code 404:
+
+```json
+{
+  "errors": "HS8 is not available for Norway"
+}
+```
 
 
 ### Parmeters
@@ -213,7 +233,9 @@ hs8 | 8 digits | customs code valid in country given in country_code
 
 Response | Meaning
 --------- | -------
-200 | ok
+200 | ok.
+202 | All factors equal zero for given hs8
+404 | HS8 not valid for given country code
 422 | Unprocessable entity
 
 ### HTTP Request
