@@ -50,9 +50,71 @@
 
           <h1 id="authorization">Authorization</h1>
 
-<p>Authorization is performed using Devise (server side) and ng-token-auth (client side) and is token based. User authenticates using email and password.</p>
+<p>Authorization is performed using Devise (server side) and ng-token-auth (client side) and is token based. User authenticates using email and password. 
+The backend utilizes token rotation for every request to secure API calls.</p>
 
 <h2 id="login">Login</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST api/auth/sign_in</code></p>
+
+<h3 id="parmeters">Parmeters</h3>
+
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>email address of user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>user password</td>
+</tr>
+</tbody></table>
+
+<h3 id="http-response-headers">HTTP Response Headers</h3>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access-token</td>
+<td>wwwww</td>
+<td>one time access token</td>
+</tr>
+<tr>
+<td>token-type</td>
+<td>Bearer</td>
+<td></td>
+</tr>
+<tr>
+<td>client</td>
+<td>xxxxx</td>
+<td>This enables the use of multiple simultaneous sessions on different clients.</td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>12334567</td>
+<td>The date at which the current session will expire.</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>test@user.pl</td>
+<td>A unique value that is used to identify the user.</td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>The successfull login returns user object that is available in $rootScope.currentUser</p>
@@ -94,6 +156,46 @@
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
+
+<h2 id="requests-to-api">Requests to API</h2>
+
+<p>The API is secured with one time tokens rotating at every request. The token is constructed according to <a href="http://tools.ietf.org/html/rfc6750">RFC 6750 Bearer Token specification</a></p>
+
+<p>First, the API client should hit the <em>login</em> endpoint to obtain <code class="prettyprint">access-token</code>, <code class="prettyprint">uid</code>, <code class="prettyprint">client</code>and <code class="prettyprint">expiry</code>. 
+Those parameters should be then send together with the API request in the request headers:</p>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access-token</td>
+<td>wwwww</td>
+</tr>
+<tr>
+<td>token-type</td>
+<td>Bearer</td>
+</tr>
+<tr>
+<td>client</td>
+<td>xxxxx</td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>12334567</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>test@user.pl</td>
+</tr>
+</tbody></table>
+
+<p>On successful authentication, to the API server will add new <code class="prettyprint">access-token</code> to the response headers. This new <code class="prettyprint">access-token</code> should be used on next request.</p>
+
+<p><em>Remark</em> The library used to handle token expiration utilizes a 5 s buffer to support batch requests. 
+It enables to send multiple requests to the API. Withing this window, the same tokens can be used to make requests.</p>
 
           <h1 id="weighted-products">Weighted products</h1>
 
