@@ -281,3 +281,58 @@ Response | Meaning
 ### HTTP Request
 
 `GET api/packaging_factors/by_vendor`
+
+## Factors last updated 
+
+Returns the datetime (iso8601) of the last uploaded file with packaging factors.
+
+```coffee
+$.ajax
+  dataType: "json"
+  type: "get"
+  data:
+    country_code: "NO"
+  url: "/api/packaging_factors/last_updated"
+  success: (data, status, jqXHR) ->
+    redirectSomewhere(status)
+```
+
+> The above command returns JSON array structured like this:
+
+```json
+{
+  "last_updated": "2015-10-16T15:19:15.000+02:00"
+}
+```
+
+
+### Parmeters
+
+Param | Format | Description
+--------- | ------- | ------- 
+country_code | 2 capital letters | iso2 country code
+
+> Parameters validation errors will be reported in 422 response JSON like:
+
+```json
+{
+    errors: {
+        country_code: [
+           "can't be blank"
+           "is the wrong length (should be 2 characters)"
+           " is not a valid country code"
+        ]
+    }
+}
+```
+
+### HTTP Response Codes
+
+Response | Meaning
+--------- | -------
+200 | ok.
+422 | Unprocessable entity
+
+### HTTP Request
+
+`GET api/packaging_factors/last_updated`
