@@ -879,7 +879,7 @@ In such case, the API will return the following JSON with HTTP status code 404:
 
 <h2 id="customs-code-info">Customs code info</h2>
 
-<p>Returns the info for given customs code mapping for given country.</p>
+<p>Returns the info for given customs code mapping for given country. If no hs8 parameter is given, all hs8 codes valid for given country are returned.</p>
 <pre><code class="highlight coffeescript"><span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
   <span class="na">dataType</span><span class="o">:</span> <span class="s">"json"</span>
   <span class="na">type</span><span class="o">:</span> <span class="s">"get"</span>
@@ -919,7 +919,7 @@ In such case, the API will return the following JSON with HTTP status code 404:
 <tr>
 <td>hs8</td>
 <td>8 digits</td>
-<td>customs code valid in country given in country_code</td>
+<td>(optional) customs code valid in country given in country_code</td>
 </tr>
 </tbody></table>
 
@@ -929,7 +929,6 @@ In such case, the API will return the following JSON with HTTP status code 404:
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="err">errors</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">hs8</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"can't be blank"</span><span class="w">
             </span><span class="s2">"is the wrong length (should be 8 characters)"</span><span class="w">
             </span><span class="s2">"is not a number"</span><span class="w">
         </span><span class="p">]</span><span class="w">
