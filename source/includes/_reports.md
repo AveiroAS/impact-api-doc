@@ -2,7 +2,7 @@
 
 ## Customs code info
 
-Returns the info for given customs code mapping for given country.
+Returns the info for given customs code mapping for given country. If no hs8 parameter is given, all hs8 codes valid for given country are returned.
 
 ```coffee
 $.ajax
@@ -35,7 +35,7 @@ $.ajax
 Param | Format | Description
 --------- | ------- | ------- 
 country_code | 2 capital letters | iso2 country code
-hs8 | 8 digits | customs code valid in country given in country_code
+hs8 | 8 digits | (optional) customs code valid in country given in country_code
 
 > Parameters validation errors will be reported in 422 response JSON like:
 
@@ -43,7 +43,6 @@ hs8 | 8 digits | customs code valid in country given in country_code
 {
     errors: {
         hs8: [
-            "can't be blank"
             "is the wrong length (should be 8 characters)"
             "is not a number"
         ]
