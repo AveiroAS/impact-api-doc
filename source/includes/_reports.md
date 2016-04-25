@@ -65,3 +65,40 @@ Response | Meaning
 ### HTTP Request
 
 `GET api/reports/customs_code_info`
+
+## Hs6
+
+Returns the list of all hs6 codes with description.
+
+```coffee
+$.ajax
+  dataType: "json"
+  type: "get"
+  url: "/api/reports/hs6"
+  success: (data, status, jqXHR) ->
+    redirectSomewhere(status)
+```
+
+> The above command returns JSON array structured like this:
+
+```json
+[
+  {
+    "hs6": "000000",
+    "hs6_text": "Levende dyr og animalske produkter"
+  },
+  {
+    "hs6": "010110",
+    "hs6_text": "Levende dyr og animalske produkter"
+  },
+  {
+    "hs6": "010111",
+    "hs6_text": "Levende dyr og animalske produkter"
+  },
+  (...)
+]
+```
+
+### HTTP Request
+
+`GET api/reports/hs6`
