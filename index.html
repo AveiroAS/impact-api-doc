@@ -963,6 +963,41 @@ In such case, the API will return the following JSON with HTTP status code 404:
 
 <p><code class="prettyprint">GET api/reports/customs_code_info</code></p>
 
+<h2 id="hs6">Hs6</h2>
+
+<p>Returns the list of all hs6 codes with description.</p>
+<pre><code class="highlight coffeescript"><span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
+  <span class="na">dataType</span><span class="o">:</span> <span class="s">"json"</span>
+  <span class="na">type</span><span class="o">:</span> <span class="s">"get"</span>
+  <span class="na">url</span><span class="o">:</span> <span class="s">"/api/reports/hs6"</span>
+  <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">jqXHR</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">redirectSomewhere</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON array structured like this:</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"hs6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hs6_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Levende dyr og animalske produkter"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"hs6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"010110"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hs6_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Levende dyr og animalske produkter"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"hs6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"010111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hs6_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Levende dyr og animalske produkter"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">(...)</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET api/reports/hs6</code></p>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
